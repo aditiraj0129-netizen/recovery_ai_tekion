@@ -1,0 +1,73 @@
+part_id,part_name,part_type,location_id,supplier_id,quantity_on_hand,reserved_quantity,expected_arrival,stock_confidence,unit_cost,is_synthetic
+P-001,OEM Coolant Pump Assembly,OEM,LOC-A,SUP-OEM,0,0,2026-03-10T10:30:00,estimated,312.0,True
+P-001,OEM Coolant Pump Assembly,OEM,LOC-B,SUP-OEM,1,0,,unverified,312.0,True
+P-001,OEM Coolant Pump Assembly,OEM,LOC-C,SUP-OEM,1,0,,known,312.0,True
+P-002,Front Brake Pad Set,OEM,LOC-A,SUP-OEM,5,2,,known,89.5,True
+P-002,Front Brake Pad Set,OEM,LOC-B,SUP-OEM,0,0,2026-03-11T09:00:00,estimated,89.5,True
+P-002,Front Brake Pad Set,OEM,LOC-C,SUP-OEM,2,1,,known,89.5,True
+P-003,Rear Brake Pad Set,OEM,LOC-A,SUP-OEM,3,0,,known,74.25,True
+P-003,Rear Brake Pad Set,OEM,LOC-B,SUP-OEM,2,0,,known,74.25,True
+P-003,Rear Brake Pad Set,OEM,LOC-C,SUP-OEM,2,1,,known,74.25,True
+P-004,Front Brake Rotor,OEM,LOC-A,SUP-OEM,2,2,,known,112.0,True
+P-004,Front Brake Rotor,OEM,LOC-B,SUP-OEM,3,1,,known,112.0,True
+P-004,Front Brake Rotor,OEM,LOC-C,SUP-OEM,4,0,,known,112.0,True
+P-005,Engine Oil Filter,OEM,LOC-A,SUP-OEM,2,1,,known,11.75,True
+P-005,Engine Oil Filter,OEM,LOC-B,SUP-OEM,4,1,,known,11.75,True
+P-005,Engine Oil Filter,OEM,LOC-C,SUP-OEM,1,0,,estimated,11.75,True
+P-006,Synthetic Engine Oil 5W-30 (5 qt),aftermarket,LOC-A,SUP-A,5,2,,known,38.0,True
+P-006,Synthetic Engine Oil 5W-30 (5 qt),aftermarket,LOC-B,SUP-B,4,0,,estimated,38.0,True
+P-006,Synthetic Engine Oil 5W-30 (5 qt),aftermarket,LOC-C,SUP-C,3,1,,known,38.0,True
+P-007,Cabin Air Filter,aftermarket,LOC-A,SUP-A,4,2,,known,19.5,True
+P-007,Cabin Air Filter,aftermarket,LOC-B,SUP-B,4,1,,known,19.5,True
+P-007,Cabin Air Filter,aftermarket,LOC-C,SUP-C,4,0,,estimated,19.5,True
+P-008,Engine Air Filter,aftermarket,LOC-A,SUP-A,2,2,,known,23.0,True
+P-008,Engine Air Filter,aftermarket,LOC-B,SUP-B,1,0,,known,23.0,True
+P-008,Engine Air Filter,aftermarket,LOC-C,SUP-C,0,0,2026-03-11T09:00:00,known,23.0,True
+P-009,Spark Plug Set,OEM,LOC-A,SUP-OEM,2,1,,known,64.0,True
+P-009,Spark Plug Set,OEM,LOC-B,SUP-OEM,4,0,,known,64.0,True
+P-009,Spark Plug Set,OEM,LOC-C,SUP-OEM,0,0,2026-03-11T09:00:00,known,64.0,True
+P-010,Serpentine Belt,OEM,LOC-A,SUP-OEM,4,1,,known,48.75,True
+P-010,Serpentine Belt,OEM,LOC-B,SUP-OEM,2,0,,known,48.75,True
+P-010,Serpentine Belt,OEM,LOC-C,SUP-OEM,2,1,,estimated,48.75,True
+P-011,12V Battery,OEM,LOC-A,SUP-OEM,3,0,,known,179.0,True
+P-011,12V Battery,OEM,LOC-B,SUP-OEM,0,0,2026-03-11T09:00:00,known,179.0,True
+P-011,12V Battery,OEM,LOC-C,SUP-OEM,4,0,,known,179.0,True
+P-012,Alternator,OEM,LOC-A,SUP-OEM,1,1,,known,342.0,True
+P-012,Alternator,OEM,LOC-B,SUP-OEM,4,0,,estimated,342.0,True
+P-012,Alternator,OEM,LOC-C,SUP-OEM,1,1,,known,342.0,True
+P-013,Starter Motor,OEM,LOC-A,SUP-OEM,0,0,,known,286.5,True
+P-013,Starter Motor,OEM,LOC-B,SUP-OEM,0,0,2026-03-11T09:00:00,known,286.5,True
+P-013,Starter Motor,OEM,LOC-C,SUP-OEM,4,1,,known,286.5,True
+P-014,A/C Compressor,OEM,LOC-A,SUP-OEM,3,3,,known,524.0,True
+P-014,A/C Compressor,OEM,LOC-B,SUP-OEM,3,1,,estimated,524.0,True
+P-014,A/C Compressor,OEM,LOC-C,SUP-OEM,3,1,,estimated,524.0,True
+P-015,Refrigerant R-1234yf (1 lb),OEM,LOC-A,SUP-OEM,6,3,,known,42.0,True
+P-015,Refrigerant R-1234yf (1 lb),OEM,LOC-B,SUP-OEM,3,0,,estimated,42.0,True
+P-015,Refrigerant R-1234yf (1 lb),OEM,LOC-C,SUP-OEM,0,0,2026-03-11T09:00:00,estimated,42.0,True
+P-016,Wheel Speed Sensor,OEM,LOC-A,SUP-OEM,9,7,,known,57.25,True
+P-016,Wheel Speed Sensor,OEM,LOC-B,SUP-OEM,4,1,,known,57.25,True
+P-016,Wheel Speed Sensor,OEM,LOC-C,SUP-OEM,0,0,2026-03-11T09:00:00,estimated,57.25,True
+P-017,Front Strut Assembly,OEM,LOC-A,SUP-OEM,0,0,,known,231.0,True
+P-017,Front Strut Assembly,OEM,LOC-B,SUP-OEM,2,0,,known,231.0,True
+P-017,Front Strut Assembly,OEM,LOC-C,SUP-OEM,3,1,,known,231.0,True
+P-018,Control Arm Bushing Kit,OEM,LOC-A,SUP-OEM,2,1,,known,66.0,True
+P-018,Control Arm Bushing Kit,OEM,LOC-B,SUP-OEM,4,1,,estimated,66.0,True
+P-018,Control Arm Bushing Kit,OEM,LOC-C,SUP-OEM,3,0,,known,66.0,True
+P-019,Automatic Transmission Fluid (1 qt),OEM,LOC-A,SUP-OEM,7,5,,known,14.5,True
+P-019,Automatic Transmission Fluid (1 qt),OEM,LOC-B,SUP-OEM,3,1,,known,14.5,True
+P-019,Automatic Transmission Fluid (1 qt),OEM,LOC-C,SUP-OEM,0,0,2026-03-11T09:00:00,known,14.5,True
+P-020,Transmission Filter Kit,OEM,LOC-A,SUP-OEM,8,5,,known,71.0,True
+P-020,Transmission Filter Kit,OEM,LOC-B,SUP-OEM,3,1,,estimated,71.0,True
+P-020,Transmission Filter Kit,OEM,LOC-C,SUP-OEM,3,0,,known,71.0,True
+P-021,Thermostat Housing,OEM,LOC-A,SUP-OEM,0,0,2026-03-13T09:00:00,estimated,93.0,True
+P-021,Thermostat Housing,OEM,LOC-B,SUP-OEM,0,0,2026-03-11T09:00:00,known,93.0,True
+P-021,Thermostat Housing,OEM,LOC-C,SUP-OEM,2,0,,known,93.0,True
+P-022,Wiper Blade Set,aftermarket,LOC-A,SUP-A,0,0,,known,27.0,True
+P-022,Wiper Blade Set,aftermarket,LOC-B,SUP-B,4,1,,known,27.0,True
+P-022,Wiper Blade Set,aftermarket,LOC-C,SUP-C,0,0,2026-03-11T09:00:00,estimated,27.0,True
+P-023,TPMS Sensor,OEM,LOC-A,SUP-OEM,4,2,,known,49.0,True
+P-023,TPMS Sensor,OEM,LOC-B,SUP-OEM,4,1,,estimated,49.0,True
+P-023,TPMS Sensor,OEM,LOC-C,SUP-OEM,3,0,,known,49.0,True
+P-024,Ignition Coil,OEM,LOC-A,SUP-OEM,2,0,,known,58.5,True
+P-024,Ignition Coil,OEM,LOC-B,SUP-OEM,4,0,,known,58.5,True
+P-024,Ignition Coil,OEM,LOC-C,SUP-OEM,3,1,,known,58.5,True

@@ -1,0 +1,13 @@
+technician_id,name,skills,shift_start,shift_end,availability,efficiency_factor,is_synthetic
+T01,Marcus Reed,general_service|brakes|tires_alignment,2026-03-10T07:00:00,2026-03-10T16:00:00,busy,1.05,True
+T02,Priya Nair,electrical|diagnostics|ac_hvac,2026-03-10T08:00:00,2026-03-10T17:00:00,busy,0.88,True
+T03,Daniel Ortiz,cooling_system|engine|diagnostics,2026-03-10T08:00:00,2026-03-10T17:00:00,available,0.85,True
+T04,Sofia Lindqvist,brakes|suspension|tires_alignment,2026-03-10T08:00:00,2026-03-10T17:00:00,available,1.08,True
+T05,Kenji Watanabe,engine|transmission|diagnostics,2026-03-10T07:30:00,2026-03-10T16:30:00,busy,0.93,True
+T06,Amara Okafor,general_service|ac_hvac|electrical,2026-03-10T09:00:00,2026-03-10T18:00:00,busy,0.92,True
+T07,Luis Fernandez,suspension|tires_alignment|brakes,2026-03-10T08:00:00,2026-03-10T17:00:00,busy,0.92,True
+T08,Hannah Brooks,transmission|engine|general_service,2026-03-10T09:00:00,2026-03-10T18:00:00,busy,0.89,True
+T09,Ravi Chandran,electrical|diagnostics|general_service,2026-03-10T07:00:00,2026-03-10T16:00:00,available,1.08,True
+T10,Elena Petrova,ac_hvac|general_service|brakes,2026-03-10T08:00:00,2026-03-10T17:00:00,available,0.88,True
+T11,Omar Haddad,brakes|suspension|general_service,2026-03-10T08:30:00,2026-03-10T17:30:00,absent,1.06,True
+T12,Grace Liu,diagnostics|engine|electrical,2026-03-10T08:00:00,2026-03-10T17:00:00,available,1.08,True

@@ -1,0 +1,8 @@
+bay_id,supported_work,available_from,available_until,status,is_synthetic
+BAY-01,general_service|brakes|tires_alignment|engine|transmission,2026-03-10T07:00:00,2026-03-10T18:00:00,occupied,True
+BAY-02,engine|cooling_system|transmission|general_service,2026-03-10T07:00:00,2026-03-10T18:00:00,available,True
+BAY-03,engine|cooling_system|diagnostics|general_service|transmission,2026-03-10T07:00:00,2026-03-10T18:00:00,occupied,True
+BAY-04,brakes|suspension|tires_alignment,2026-03-10T07:00:00,2026-03-10T18:00:00,occupied,True
+BAY-05,electrical|diagnostics|ac_hvac,2026-03-10T07:00:00,2026-03-10T18:00:00,occupied,True
+BAY-06,general_service|ac_hvac|electrical|diagnostics|engine|transmission,2026-03-10T07:00:00,2026-03-10T18:00:00,occupied,True
+BAY-07,suspension|tires_alignment|brakes|general_service,2026-03-10T08:00:00,2026-03-10T17:00:00,occupied,True

@@ -1,0 +1,3454 @@
+{
+  "meta": {
+    "dataset_name": "Recovery AI synthetic dealership dataset",
+    "schema_version": "1.0",
+    "is_synthetic": true,
+    "disclaimer": "Synthetic, illustrative data generated for the Recovery AI prototype. Not real dealership, customer, supplier or Tekion data.",
+    "seed": 42,
+    "scenario_date": "2026-03-10",
+    "scenario_clock": "09:40",
+    "snapshot_note": "State of the dealership immediately before the 09:40 hero disruption is applied.",
+    "hero_scenario": {
+      "disruption_id": "D-001",
+      "detected_at": "2026-03-10T09:40:00",
+      "part_id": "P-001",
+      "direct_ro_ids": [
+        "48213",
+        "48240"
+      ],
+      "indirect_ro_ids": [
+        "48220",
+        "48231"
+      ],
+      "shared_technician_id": "T03",
+      "plan_v1_source_location": "LOC-B",
+      "plan_v2_source_location": "LOC-C",
+      "checkpoint_failure_disruption_id": "D-002"
+    },
+    "counts": {
+      "suppliers": 4,
+      "locations": 3,
+      "parts": 24,
+      "inventory": 72,
+      "customers": 40,
+      "vehicles": 40,
+      "technicians": 12,
+      "bays": 7,
+      "repair_orders": 40,
+      "appointments": 28,
+      "disruptions": 14
+    }
+  },
+  "suppliers": [
+    {
+      "supplier_id": "SUP-OEM",
+      "name": "OEM Parts Distribution (synthetic)",
+      "supplier_type": "oem",
+      "is_synthetic": true
+    },
+    {
+      "supplier_id": "SUP-A",
+      "name": "Store A Parts Department",
+      "supplier_type": "dealer_store",
+      "is_synthetic": true
+    },
+    {
+      "supplier_id": "SUP-B",
+      "name": "Store B Parts Department",
+      "supplier_type": "dealer_store",
+      "is_synthetic": true
+    },
+    {
+      "supplier_id": "SUP-C",
+      "name": "Store C Regional Warehouse",
+      "supplier_type": "dealer_store",
+      "is_synthetic": true
+    }
+  ],
+  "locations": [
+    {
+      "location_id": "LOC-A",
+      "name": "Store A - Home Dealership",
+      "supplier_id": "SUP-A",
+      "is_home": true,
+      "transfer_time_minutes": 0,
+      "transfer_cost": 0.0,
+      "is_synthetic": true
+    },
+    {
+      "location_id": "LOC-B",
+      "name": "Store B - Sister Dealership (North)",
+      "supplier_id": "SUP-B",
+      "is_home": false,
+      "transfer_time_minutes": 45,
+      "transfer_cost": 25.0,
+      "is_synthetic": true
+    },
+    {
+      "location_id": "LOC-C",
+      "name": "Store C - Regional Parts Warehouse",
+      "supplier_id": "SUP-C",
+      "is_home": false,
+      "transfer_time_minutes": 90,
+      "transfer_cost": 40.0,
+      "is_synthetic": true
+    }
+  ],
+  "parts": [
+    {
+      "part_id": "P-001",
+      "part_name": "OEM Coolant Pump Assembly",
+      "part_type": "OEM",
+      "unit_cost": 312.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-002",
+      "part_name": "Front Brake Pad Set",
+      "part_type": "OEM",
+      "unit_cost": 89.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-003",
+      "part_name": "Rear Brake Pad Set",
+      "part_type": "OEM",
+      "unit_cost": 74.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-004",
+      "part_name": "Front Brake Rotor",
+      "part_type": "OEM",
+      "unit_cost": 112.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-005",
+      "part_name": "Engine Oil Filter",
+      "part_type": "OEM",
+      "unit_cost": 11.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-006",
+      "part_name": "Synthetic Engine Oil 5W-30 (5 qt)",
+      "part_type": "aftermarket",
+      "unit_cost": 38.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-007",
+      "part_name": "Cabin Air Filter",
+      "part_type": "aftermarket",
+      "unit_cost": 19.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-008",
+      "part_name": "Engine Air Filter",
+      "part_type": "aftermarket",
+      "unit_cost": 23.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-009",
+      "part_name": "Spark Plug Set",
+      "part_type": "OEM",
+      "unit_cost": 64.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-010",
+      "part_name": "Serpentine Belt",
+      "part_type": "OEM",
+      "unit_cost": 48.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-011",
+      "part_name": "12V Battery",
+      "part_type": "OEM",
+      "unit_cost": 179.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-012",
+      "part_name": "Alternator",
+      "part_type": "OEM",
+      "unit_cost": 342.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-013",
+      "part_name": "Starter Motor",
+      "part_type": "OEM",
+      "unit_cost": 286.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-014",
+      "part_name": "A/C Compressor",
+      "part_type": "OEM",
+      "unit_cost": 524.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-015",
+      "part_name": "Refrigerant R-1234yf (1 lb)",
+      "part_type": "OEM",
+      "unit_cost": 42.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-016",
+      "part_name": "Wheel Speed Sensor",
+      "part_type": "OEM",
+      "unit_cost": 57.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-017",
+      "part_name": "Front Strut Assembly",
+      "part_type": "OEM",
+      "unit_cost": 231.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-018",
+      "part_name": "Control Arm Bushing Kit",
+      "part_type": "OEM",
+      "unit_cost": 66.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-019",
+      "part_name": "Automatic Transmission Fluid (1 qt)",
+      "part_type": "OEM",
+      "unit_cost": 14.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-020",
+      "part_name": "Transmission Filter Kit",
+      "part_type": "OEM",
+      "unit_cost": 71.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-021",
+      "part_name": "Thermostat Housing",
+      "part_type": "OEM",
+      "unit_cost": 93.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-022",
+      "part_name": "Wiper Blade Set",
+      "part_type": "aftermarket",
+      "unit_cost": 27.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-023",
+      "part_name": "TPMS Sensor",
+      "part_type": "OEM",
+      "unit_cost": 49.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-024",
+      "part_name": "Ignition Coil",
+      "part_type": "OEM",
+      "unit_cost": 58.5,
+      "is_synthetic": true
+    }
+  ],
+  "inventory": [
+    {
+      "part_id": "P-001",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-10T10:30:00",
+      "stock_confidence": "estimated",
+      "unit_cost": 312.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-001",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 1,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "unverified",
+      "unit_cost": 312.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-001",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 1,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 312.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-002",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 5,
+      "reserved_quantity": 2,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 89.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-002",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "estimated",
+      "unit_cost": 89.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-002",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 89.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-003",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 74.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-003",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 74.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-003",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 74.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-004",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 2,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 112.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-004",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 112.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-004",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 112.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-005",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 11.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-005",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 11.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-005",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 1,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 11.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-006",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-A",
+      "quantity_on_hand": 5,
+      "reserved_quantity": 2,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 38.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-006",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-B",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 38.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-006",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-C",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 38.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-007",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-A",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 2,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 19.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-007",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-B",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 19.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-007",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-C",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 19.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-008",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-A",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 2,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 23.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-008",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-B",
+      "quantity_on_hand": 1,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 23.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-008",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-C",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "known",
+      "unit_cost": 23.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-009",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 64.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-009",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 64.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-009",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "known",
+      "unit_cost": 64.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-010",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 48.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-010",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 48.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-010",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 48.75,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-011",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 179.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-011",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "known",
+      "unit_cost": 179.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-011",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 179.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-012",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 1,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 342.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-012",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 342.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-012",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 1,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 342.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-013",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 286.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-013",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "known",
+      "unit_cost": 286.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-013",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 286.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-014",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 3,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 524.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-014",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 524.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-014",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 524.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-015",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 6,
+      "reserved_quantity": 3,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 42.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-015",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 42.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-015",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "estimated",
+      "unit_cost": 42.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-016",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 9,
+      "reserved_quantity": 7,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 57.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-016",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 57.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-016",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "estimated",
+      "unit_cost": 57.25,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-017",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 231.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-017",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 231.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-017",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 231.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-018",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 66.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-018",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 66.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-018",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 66.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-019",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 7,
+      "reserved_quantity": 5,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 14.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-019",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 14.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-019",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "known",
+      "unit_cost": 14.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-020",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 8,
+      "reserved_quantity": 5,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 71.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-020",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 71.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-020",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 71.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-021",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-13T09:00:00",
+      "stock_confidence": "estimated",
+      "unit_cost": 93.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-021",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "known",
+      "unit_cost": 93.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-021",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 93.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-022",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-A",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 27.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-022",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-B",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 27.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-022",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-C",
+      "quantity_on_hand": 0,
+      "reserved_quantity": 0,
+      "expected_arrival": "2026-03-11T09:00:00",
+      "stock_confidence": "estimated",
+      "unit_cost": 27.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-023",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 2,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 49.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-023",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "estimated",
+      "unit_cost": 49.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-023",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 49.0,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-024",
+      "location_id": "LOC-A",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 2,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 58.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-024",
+      "location_id": "LOC-B",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 4,
+      "reserved_quantity": 0,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 58.5,
+      "is_synthetic": true
+    },
+    {
+      "part_id": "P-024",
+      "location_id": "LOC-C",
+      "supplier_id": "SUP-OEM",
+      "quantity_on_hand": 3,
+      "reserved_quantity": 1,
+      "expected_arrival": null,
+      "stock_confidence": "known",
+      "unit_cost": 58.5,
+      "is_synthetic": true
+    }
+  ],
+  "customers": [
+    {
+      "customer_id": "C-0001",
+      "name": "Jordan Ellis",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0002",
+      "name": "Sam Whitaker",
+      "part_preference": "OEM",
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0003",
+      "name": "Nadia Rahman",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0004",
+      "name": "Chris Donovan",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0005",
+      "name": "Saul Gupta",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0006",
+      "name": "Gabe Vargas",
+      "part_preference": "OEM",
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0007",
+      "name": "Casey Gupta",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0008",
+      "name": "Quinn Pereira",
+      "part_preference": "OEM",
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0009",
+      "name": "Vik Rossi",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0010",
+      "name": "Leo Fischer",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0011",
+      "name": "Vik Pereira",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0012",
+      "name": "Hana Hayes",
+      "part_preference": "OEM",
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0013",
+      "name": "Yara Sato",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0014",
+      "name": "Hana Gupta",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0015",
+      "name": "Farah Nakamura",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0016",
+      "name": "Gabe Banerjee",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0017",
+      "name": "Maya Dubois",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0018",
+      "name": "Owen Kovac",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0019",
+      "name": "Owen Rossi",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0020",
+      "name": "Vik Usman",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0021",
+      "name": "Rhea Abbott",
+      "part_preference": "OEM",
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0022",
+      "name": "Vik Dubois",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0023",
+      "name": "Maya Banerjee",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0024",
+      "name": "Ian Lopez",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0025",
+      "name": "Ian Banerjee",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0026",
+      "name": "Vik Nakamura",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0027",
+      "name": "Owen Osei",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0028",
+      "name": "Blake Hayes",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0029",
+      "name": "Farah Walsh",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0030",
+      "name": "Ian Hayes",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0031",
+      "name": "Hana Morgan",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0032",
+      "name": "Leo Jensen",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0033",
+      "name": "Eli Thompson",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0034",
+      "name": "Eli Pereira",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0035",
+      "name": "Vik Thompson",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0036",
+      "name": "Noor Fischer",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0037",
+      "name": "Owen Sato",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0038",
+      "name": "Uma Walsh",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0039",
+      "name": "Kira Dubois",
+      "part_preference": null,
+      "is_synthetic": true
+    },
+    {
+      "customer_id": "C-0040",
+      "name": "Alex Walsh",
+      "part_preference": null,
+      "is_synthetic": true
+    }
+  ],
+  "vehicles": [
+    {
+      "vehicle_id": "VEH-0001",
+      "customer_id": "C-0001",
+      "make": "Arden",
+      "model": "Sedan S",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0002",
+      "customer_id": "C-0002",
+      "make": "Brava",
+      "model": "Wagon W",
+      "year": 2019,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0003",
+      "customer_id": "C-0003",
+      "make": "Calix",
+      "model": "Coupe C",
+      "year": 2022,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0004",
+      "customer_id": "C-0004",
+      "make": "Dorian",
+      "model": "SUV V",
+      "year": 2020,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0005",
+      "customer_id": "C-0005",
+      "make": "Calix",
+      "model": "Pickup P",
+      "year": 2022,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0006",
+      "customer_id": "C-0006",
+      "make": "Calix",
+      "model": "Pickup P",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0007",
+      "customer_id": "C-0007",
+      "make": "Calix",
+      "model": "Coupe C",
+      "year": 2015,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0008",
+      "customer_id": "C-0008",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2025,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0009",
+      "customer_id": "C-0009",
+      "make": "Arden",
+      "model": "Crossover X",
+      "year": 2013,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0010",
+      "customer_id": "C-0010",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0011",
+      "customer_id": "C-0011",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2016,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0012",
+      "customer_id": "C-0012",
+      "make": "Arden",
+      "model": "Sedan S",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0013",
+      "customer_id": "C-0013",
+      "make": "Brava",
+      "model": "Wagon W",
+      "year": 2015,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0014",
+      "customer_id": "C-0014",
+      "make": "Arden",
+      "model": "Sedan S",
+      "year": 2020,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0015",
+      "customer_id": "C-0015",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2025,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0016",
+      "customer_id": "C-0016",
+      "make": "Calix",
+      "model": "Pickup P",
+      "year": 2023,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0017",
+      "customer_id": "C-0017",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0018",
+      "customer_id": "C-0018",
+      "make": "Calix",
+      "model": "Pickup P",
+      "year": 2012,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0019",
+      "customer_id": "C-0019",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2022,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0020",
+      "customer_id": "C-0020",
+      "make": "Brava",
+      "model": "Wagon W",
+      "year": 2016,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0021",
+      "customer_id": "C-0021",
+      "make": "Dorian",
+      "model": "SUV V",
+      "year": 2020,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0022",
+      "customer_id": "C-0022",
+      "make": "Brava",
+      "model": "Wagon W",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0023",
+      "customer_id": "C-0023",
+      "make": "Arden",
+      "model": "Sedan S",
+      "year": 2015,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0024",
+      "customer_id": "C-0024",
+      "make": "Arden",
+      "model": "Crossover X",
+      "year": 2022,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0025",
+      "customer_id": "C-0025",
+      "make": "Brava",
+      "model": "Wagon W",
+      "year": 2012,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0026",
+      "customer_id": "C-0026",
+      "make": "Calix",
+      "model": "Coupe C",
+      "year": 2020,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0027",
+      "customer_id": "C-0027",
+      "make": "Calix",
+      "model": "Pickup P",
+      "year": 2020,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0028",
+      "customer_id": "C-0028",
+      "make": "Arden",
+      "model": "Sedan S",
+      "year": 2019,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0029",
+      "customer_id": "C-0029",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2020,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0030",
+      "customer_id": "C-0030",
+      "make": "Dorian",
+      "model": "Minivan M",
+      "year": 2024,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0031",
+      "customer_id": "C-0031",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2013,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0032",
+      "customer_id": "C-0032",
+      "make": "Arden",
+      "model": "Crossover X",
+      "year": 2020,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0033",
+      "customer_id": "C-0033",
+      "make": "Dorian",
+      "model": "Minivan M",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0034",
+      "customer_id": "C-0034",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0035",
+      "customer_id": "C-0035",
+      "make": "Calix",
+      "model": "Pickup P",
+      "year": 2017,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0036",
+      "customer_id": "C-0036",
+      "make": "Brava",
+      "model": "Wagon W",
+      "year": 2021,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0037",
+      "customer_id": "C-0037",
+      "make": "Brava",
+      "model": "Wagon W",
+      "year": 2017,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0038",
+      "customer_id": "C-0038",
+      "make": "Dorian",
+      "model": "SUV V",
+      "year": 2013,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0039",
+      "customer_id": "C-0039",
+      "make": "Brava",
+      "model": "Hatch H",
+      "year": 2015,
+      "is_synthetic": true
+    },
+    {
+      "vehicle_id": "VEH-0040",
+      "customer_id": "C-0040",
+      "make": "Calix",
+      "model": "Coupe C",
+      "year": 2012,
+      "is_synthetic": true
+    }
+  ],
+  "technicians": [
+    {
+      "technician_id": "T01",
+      "name": "Marcus Reed",
+      "skills": [
+        "general_service",
+        "brakes",
+        "tires_alignment"
+      ],
+      "shift_start": "2026-03-10T07:00:00",
+      "shift_end": "2026-03-10T16:00:00",
+      "availability": "busy",
+      "efficiency_factor": 1.05,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T02",
+      "name": "Priya Nair",
+      "skills": [
+        "electrical",
+        "diagnostics",
+        "ac_hvac"
+      ],
+      "shift_start": "2026-03-10T08:00:00",
+      "shift_end": "2026-03-10T17:00:00",
+      "availability": "busy",
+      "efficiency_factor": 0.88,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T03",
+      "name": "Daniel Ortiz",
+      "skills": [
+        "cooling_system",
+        "engine",
+        "diagnostics"
+      ],
+      "shift_start": "2026-03-10T08:00:00",
+      "shift_end": "2026-03-10T17:00:00",
+      "availability": "available",
+      "efficiency_factor": 0.85,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T04",
+      "name": "Sofia Lindqvist",
+      "skills": [
+        "brakes",
+        "suspension",
+        "tires_alignment"
+      ],
+      "shift_start": "2026-03-10T08:00:00",
+      "shift_end": "2026-03-10T17:00:00",
+      "availability": "available",
+      "efficiency_factor": 1.08,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T05",
+      "name": "Kenji Watanabe",
+      "skills": [
+        "engine",
+        "transmission",
+        "diagnostics"
+      ],
+      "shift_start": "2026-03-10T07:30:00",
+      "shift_end": "2026-03-10T16:30:00",
+      "availability": "busy",
+      "efficiency_factor": 0.93,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T06",
+      "name": "Amara Okafor",
+      "skills": [
+        "general_service",
+        "ac_hvac",
+        "electrical"
+      ],
+      "shift_start": "2026-03-10T09:00:00",
+      "shift_end": "2026-03-10T18:00:00",
+      "availability": "busy",
+      "efficiency_factor": 0.92,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T07",
+      "name": "Luis Fernandez",
+      "skills": [
+        "suspension",
+        "tires_alignment",
+        "brakes"
+      ],
+      "shift_start": "2026-03-10T08:00:00",
+      "shift_end": "2026-03-10T17:00:00",
+      "availability": "busy",
+      "efficiency_factor": 0.92,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T08",
+      "name": "Hannah Brooks",
+      "skills": [
+        "transmission",
+        "engine",
+        "general_service"
+      ],
+      "shift_start": "2026-03-10T09:00:00",
+      "shift_end": "2026-03-10T18:00:00",
+      "availability": "busy",
+      "efficiency_factor": 0.89,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T09",
+      "name": "Ravi Chandran",
+      "skills": [
+        "electrical",
+        "diagnostics",
+        "general_service"
+      ],
+      "shift_start": "2026-03-10T07:00:00",
+      "shift_end": "2026-03-10T16:00:00",
+      "availability": "available",
+      "efficiency_factor": 1.08,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T10",
+      "name": "Elena Petrova",
+      "skills": [
+        "ac_hvac",
+        "general_service",
+        "brakes"
+      ],
+      "shift_start": "2026-03-10T08:00:00",
+      "shift_end": "2026-03-10T17:00:00",
+      "availability": "available",
+      "efficiency_factor": 0.88,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T11",
+      "name": "Omar Haddad",
+      "skills": [
+        "brakes",
+        "suspension",
+        "general_service"
+      ],
+      "shift_start": "2026-03-10T08:30:00",
+      "shift_end": "2026-03-10T17:30:00",
+      "availability": "absent",
+      "efficiency_factor": 1.06,
+      "is_synthetic": true
+    },
+    {
+      "technician_id": "T12",
+      "name": "Grace Liu",
+      "skills": [
+        "diagnostics",
+        "engine",
+        "electrical"
+      ],
+      "shift_start": "2026-03-10T08:00:00",
+      "shift_end": "2026-03-10T17:00:00",
+      "availability": "available",
+      "efficiency_factor": 1.08,
+      "is_synthetic": true
+    }
+  ],
+  "bays": [
+    {
+      "bay_id": "BAY-01",
+      "supported_work": [
+        "general_service",
+        "brakes",
+        "tires_alignment",
+        "engine",
+        "transmission"
+      ],
+      "available_from": "2026-03-10T07:00:00",
+      "available_until": "2026-03-10T18:00:00",
+      "status": "occupied",
+      "is_synthetic": true
+    },
+    {
+      "bay_id": "BAY-02",
+      "supported_work": [
+        "engine",
+        "cooling_system",
+        "transmission",
+        "general_service"
+      ],
+      "available_from": "2026-03-10T07:00:00",
+      "available_until": "2026-03-10T18:00:00",
+      "status": "available",
+      "is_synthetic": true
+    },
+    {
+      "bay_id": "BAY-03",
+      "supported_work": [
+        "engine",
+        "cooling_system",
+        "diagnostics",
+        "general_service",
+        "transmission"
+      ],
+      "available_from": "2026-03-10T07:00:00",
+      "available_until": "2026-03-10T18:00:00",
+      "status": "occupied",
+      "is_synthetic": true
+    },
+    {
+      "bay_id": "BAY-04",
+      "supported_work": [
+        "brakes",
+        "suspension",
+        "tires_alignment"
+      ],
+      "available_from": "2026-03-10T07:00:00",
+      "available_until": "2026-03-10T18:00:00",
+      "status": "occupied",
+      "is_synthetic": true
+    },
+    {
+      "bay_id": "BAY-05",
+      "supported_work": [
+        "electrical",
+        "diagnostics",
+        "ac_hvac"
+      ],
+      "available_from": "2026-03-10T07:00:00",
+      "available_until": "2026-03-10T18:00:00",
+      "status": "occupied",
+      "is_synthetic": true
+    },
+    {
+      "bay_id": "BAY-06",
+      "supported_work": [
+        "general_service",
+        "ac_hvac",
+        "electrical",
+        "diagnostics",
+        "engine",
+        "transmission"
+      ],
+      "available_from": "2026-03-10T07:00:00",
+      "available_until": "2026-03-10T18:00:00",
+      "status": "occupied",
+      "is_synthetic": true
+    },
+    {
+      "bay_id": "BAY-07",
+      "supported_work": [
+        "suspension",
+        "tires_alignment",
+        "brakes",
+        "general_service"
+      ],
+      "available_from": "2026-03-10T08:00:00",
+      "available_until": "2026-03-10T17:00:00",
+      "status": "occupied",
+      "is_synthetic": true
+    }
+  ],
+  "repair_orders": [
+    {
+      "ro_id": "48201",
+      "vehicle_id": "VEH-0005",
+      "customer_id": "C-0005",
+      "required_parts": [
+        {
+          "part_id": "P-015",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "ac_hvac"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T14:45:00",
+      "priority": 1,
+      "assigned_technician_id": "T10",
+      "assigned_bay_id": "BAY-05",
+      "scheduled_start": "2026-03-10T13:15:00",
+      "scheduled_end": "2026-03-10T14:15:00",
+      "created_at": "2026-03-09T23:55:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48202",
+      "vehicle_id": "VEH-0006",
+      "customer_id": "C-0006",
+      "required_parts": [
+        {
+          "part_id": "P-012",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "electrical",
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T12:15:00",
+      "priority": 3,
+      "assigned_technician_id": "T02",
+      "assigned_bay_id": "BAY-05",
+      "scheduled_start": "2026-03-10T10:30:00",
+      "scheduled_end": "2026-03-10T11:30:00",
+      "created_at": "2026-03-09T16:10:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48203",
+      "vehicle_id": "VEH-0007",
+      "customer_id": "C-0007",
+      "required_parts": [
+        {
+          "part_id": "P-019",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-020",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "transmission"
+      ],
+      "estimated_duration_minutes": 120,
+      "status": "in_progress",
+      "promised_at": "2026-03-10T13:00:00",
+      "priority": 3,
+      "assigned_technician_id": "T08",
+      "assigned_bay_id": "BAY-06",
+      "scheduled_start": "2026-03-10T09:30:00",
+      "scheduled_end": "2026-03-10T11:30:00",
+      "created_at": "2026-03-09T20:30:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48204",
+      "vehicle_id": "VEH-0008",
+      "customer_id": "C-0008",
+      "required_parts": [
+        {
+          "part_id": "P-014",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-015",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "ac_hvac"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "in_progress",
+      "promised_at": "2026-03-10T11:00:00",
+      "priority": 1,
+      "assigned_technician_id": "T02",
+      "assigned_bay_id": "BAY-05",
+      "scheduled_start": "2026-03-10T09:15:00",
+      "scheduled_end": "2026-03-10T10:15:00",
+      "created_at": "2026-03-09T12:45:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48205",
+      "vehicle_id": "VEH-0009",
+      "customer_id": "C-0009",
+      "required_parts": [
+        {
+          "part_id": "P-023",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "tires_alignment"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "completed",
+      "promised_at": "2026-03-10T10:30:00",
+      "priority": 1,
+      "assigned_technician_id": "T01",
+      "assigned_bay_id": "BAY-01",
+      "scheduled_start": "2026-03-10T08:00:00",
+      "scheduled_end": "2026-03-10T09:00:00",
+      "created_at": "2026-03-10T02:30:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48206",
+      "vehicle_id": "VEH-0010",
+      "customer_id": "C-0010",
+      "required_parts": [
+        {
+          "part_id": "P-002",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-004",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "brakes"
+      ],
+      "estimated_duration_minutes": 120,
+      "status": "waiting",
+      "promised_at": "2026-03-10T17:00:00",
+      "priority": 3,
+      "assigned_technician_id": "T04",
+      "assigned_bay_id": "BAY-04",
+      "scheduled_start": "2026-03-10T14:30:00",
+      "scheduled_end": "2026-03-10T16:30:00",
+      "created_at": "2026-03-10T08:40:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48207",
+      "vehicle_id": "VEH-0011",
+      "customer_id": "C-0011",
+      "required_parts": [
+        {
+          "part_id": "P-014",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-015",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "ac_hvac"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "completed",
+      "promised_at": "2026-03-10T10:30:00",
+      "priority": 3,
+      "assigned_technician_id": "T10",
+      "assigned_bay_id": "BAY-06",
+      "scheduled_start": "2026-03-10T08:00:00",
+      "scheduled_end": "2026-03-10T09:00:00",
+      "created_at": "2026-03-09T12:15:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48211",
+      "vehicle_id": "VEH-0012",
+      "customer_id": "C-0012",
+      "required_parts": [
+        {
+          "part_id": "P-016",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T14:45:00",
+      "priority": 2,
+      "assigned_technician_id": "T02",
+      "assigned_bay_id": "BAY-06",
+      "scheduled_start": "2026-03-10T13:00:00",
+      "scheduled_end": "2026-03-10T14:00:00",
+      "created_at": "2026-03-09T14:25:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48212",
+      "vehicle_id": "VEH-0013",
+      "customer_id": "C-0013",
+      "required_parts": [
+        {
+          "part_id": "P-006",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-007",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-008",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "general_service"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T15:00:00",
+      "priority": 3,
+      "assigned_technician_id": "T09",
+      "assigned_bay_id": "BAY-07",
+      "scheduled_start": "2026-03-10T12:30:00",
+      "scheduled_end": "2026-03-10T13:30:00",
+      "created_at": "2026-03-09T07:25:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48213",
+      "vehicle_id": "VEH-0001",
+      "customer_id": "C-0001",
+      "required_parts": [
+        {
+          "part_id": "P-001",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "cooling_system"
+      ],
+      "estimated_duration_minutes": 120,
+      "status": "waiting",
+      "promised_at": "2026-03-10T17:00:00",
+      "priority": 1,
+      "assigned_technician_id": "T03",
+      "assigned_bay_id": "BAY-02",
+      "scheduled_start": "2026-03-10T11:00:00",
+      "scheduled_end": "2026-03-10T13:00:00",
+      "created_at": "2026-03-09T16:30:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48214",
+      "vehicle_id": "VEH-0014",
+      "customer_id": "C-0014",
+      "required_parts": [
+        {
+          "part_id": "P-007",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-008",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "general_service"
+      ],
+      "estimated_duration_minutes": 30,
+      "status": "waiting",
+      "promised_at": "2026-03-10T14:00:00",
+      "priority": 3,
+      "assigned_technician_id": "T01",
+      "assigned_bay_id": "BAY-01",
+      "scheduled_start": "2026-03-10T12:45:00",
+      "scheduled_end": "2026-03-10T13:15:00",
+      "created_at": "2026-03-09T19:40:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48215",
+      "vehicle_id": "VEH-0015",
+      "customer_id": "C-0015",
+      "required_parts": [
+        {
+          "part_id": "P-019",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-020",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "transmission"
+      ],
+      "estimated_duration_minutes": 90,
+      "status": "waiting",
+      "promised_at": "2026-03-10T16:30:00",
+      "priority": 4,
+      "assigned_technician_id": "T08",
+      "assigned_bay_id": "BAY-02",
+      "scheduled_start": "2026-03-10T14:15:00",
+      "scheduled_end": "2026-03-10T15:45:00",
+      "created_at": "2026-03-10T07:25:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48216",
+      "vehicle_id": "VEH-0016",
+      "customer_id": "C-0016",
+      "required_parts": [
+        {
+          "part_id": "P-002",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "brakes"
+      ],
+      "estimated_duration_minutes": 90,
+      "status": "in_progress",
+      "promised_at": "2026-03-10T13:00:00",
+      "priority": 4,
+      "assigned_technician_id": "T01",
+      "assigned_bay_id": "BAY-01",
+      "scheduled_start": "2026-03-10T09:30:00",
+      "scheduled_end": "2026-03-10T11:00:00",
+      "created_at": "2026-03-10T07:30:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48219",
+      "vehicle_id": "VEH-0017",
+      "customer_id": "C-0017",
+      "required_parts": [],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "in_progress",
+      "promised_at": "2026-03-10T10:15:00",
+      "priority": 4,
+      "assigned_technician_id": "T05",
+      "assigned_bay_id": "BAY-03",
+      "scheduled_start": "2026-03-10T08:45:00",
+      "scheduled_end": "2026-03-10T09:45:00",
+      "created_at": "2026-03-09T12:30:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48220",
+      "vehicle_id": "VEH-0003",
+      "customer_id": "C-0003",
+      "required_parts": [
+        {
+          "part_id": "P-009",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "engine"
+      ],
+      "estimated_duration_minutes": 90,
+      "status": "waiting",
+      "promised_at": "2026-03-10T15:00:00",
+      "priority": 2,
+      "assigned_technician_id": "T03",
+      "assigned_bay_id": "BAY-03",
+      "scheduled_start": "2026-03-10T13:00:00",
+      "scheduled_end": "2026-03-10T14:30:00",
+      "created_at": "2026-03-09T15:00:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48224",
+      "vehicle_id": "VEH-0018",
+      "customer_id": "C-0018",
+      "required_parts": [
+        {
+          "part_id": "P-016",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 45,
+      "status": "waiting",
+      "promised_at": "2026-03-10T11:00:00",
+      "priority": 2,
+      "assigned_technician_id": "T12",
+      "assigned_bay_id": "BAY-03",
+      "scheduled_start": "2026-03-10T09:45:00",
+      "scheduled_end": "2026-03-10T10:30:00",
+      "created_at": "2026-03-09T15:10:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48225",
+      "vehicle_id": "VEH-0019",
+      "customer_id": "C-0019",
+      "required_parts": [
+        {
+          "part_id": "P-016",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 30,
+      "status": "waiting",
+      "promised_at": "2026-03-10T12:30:00",
+      "priority": 3,
+      "assigned_technician_id": "T12",
+      "assigned_bay_id": "BAY-05",
+      "scheduled_start": "2026-03-10T11:30:00",
+      "scheduled_end": "2026-03-10T12:00:00",
+      "created_at": "2026-03-09T23:40:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48227",
+      "vehicle_id": "VEH-0020",
+      "customer_id": "C-0020",
+      "required_parts": [
+        {
+          "part_id": "P-014",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-015",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "ac_hvac"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T16:00:00",
+      "priority": 2,
+      "assigned_technician_id": "T06",
+      "assigned_bay_id": "BAY-06",
+      "scheduled_start": "2026-03-10T14:30:00",
+      "scheduled_end": "2026-03-10T15:30:00",
+      "created_at": "2026-03-09T06:10:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48229",
+      "vehicle_id": "VEH-0021",
+      "customer_id": "C-0021",
+      "required_parts": [
+        {
+          "part_id": "P-023",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "tires_alignment"
+      ],
+      "estimated_duration_minutes": 45,
+      "status": "completed",
+      "promised_at": "2026-03-10T10:45:00",
+      "priority": 1,
+      "assigned_technician_id": "T07",
+      "assigned_bay_id": "BAY-07",
+      "scheduled_start": "2026-03-10T08:00:00",
+      "scheduled_end": "2026-03-10T08:45:00",
+      "created_at": "2026-03-09T19:45:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48230",
+      "vehicle_id": "VEH-0022",
+      "customer_id": "C-0022",
+      "required_parts": [
+        {
+          "part_id": "P-016",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 30,
+      "status": "waiting",
+      "promised_at": "2026-03-10T12:00:00",
+      "priority": 3,
+      "assigned_technician_id": "T09",
+      "assigned_bay_id": "BAY-03",
+      "scheduled_start": "2026-03-10T10:45:00",
+      "scheduled_end": "2026-03-10T11:15:00",
+      "created_at": "2026-03-10T01:40:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48231",
+      "vehicle_id": "VEH-0004",
+      "customer_id": "C-0004",
+      "required_parts": [
+        {
+          "part_id": "P-016",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T16:00:00",
+      "priority": 2,
+      "assigned_technician_id": "T03",
+      "assigned_bay_id": "BAY-03",
+      "scheduled_start": "2026-03-10T14:30:00",
+      "scheduled_end": "2026-03-10T15:30:00",
+      "created_at": "2026-03-10T08:10:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48232",
+      "vehicle_id": "VEH-0023",
+      "customer_id": "C-0023",
+      "required_parts": [
+        {
+          "part_id": "P-023",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "tires_alignment"
+      ],
+      "estimated_duration_minutes": 30,
+      "status": "completed",
+      "promised_at": "2026-03-10T10:15:00",
+      "priority": 3,
+      "assigned_technician_id": "T04",
+      "assigned_bay_id": "BAY-07",
+      "scheduled_start": "2026-03-10T08:45:00",
+      "scheduled_end": "2026-03-10T09:15:00",
+      "created_at": "2026-03-09T17:45:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48236",
+      "vehicle_id": "VEH-0024",
+      "customer_id": "C-0024",
+      "required_parts": [
+        {
+          "part_id": "P-012",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "electrical",
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "completed",
+      "promised_at": "2026-03-10T09:30:00",
+      "priority": 2,
+      "assigned_technician_id": "T09",
+      "assigned_bay_id": "BAY-05",
+      "scheduled_start": "2026-03-10T07:30:00",
+      "scheduled_end": "2026-03-10T08:30:00",
+      "created_at": "2026-03-09T14:00:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48238",
+      "vehicle_id": "VEH-0025",
+      "customer_id": "C-0025",
+      "required_parts": [
+        {
+          "part_id": "P-005",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-006",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-022",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "general_service"
+      ],
+      "estimated_duration_minutes": 45,
+      "status": "completed",
+      "promised_at": "2026-03-10T11:30:00",
+      "priority": 3,
+      "assigned_technician_id": "T09",
+      "assigned_bay_id": "BAY-02",
+      "scheduled_start": "2026-03-10T08:45:00",
+      "scheduled_end": "2026-03-10T09:30:00",
+      "created_at": "2026-03-09T06:30:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48239",
+      "vehicle_id": "VEH-0026",
+      "customer_id": "C-0026",
+      "required_parts": [
+        {
+          "part_id": "P-018",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "suspension",
+        "tires_alignment"
+      ],
+      "estimated_duration_minutes": 150,
+      "status": "in_progress",
+      "promised_at": "2026-03-10T12:45:00",
+      "priority": 1,
+      "assigned_technician_id": "T07",
+      "assigned_bay_id": "BAY-04",
+      "scheduled_start": "2026-03-10T08:45:00",
+      "scheduled_end": "2026-03-10T11:15:00",
+      "created_at": "2026-03-09T19:00:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48240",
+      "vehicle_id": "VEH-0002",
+      "customer_id": "C-0002",
+      "required_parts": [
+        {
+          "part_id": "P-001",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "cooling_system"
+      ],
+      "estimated_duration_minutes": 120,
+      "status": "waiting",
+      "promised_at": "2026-03-11T12:00:00",
+      "priority": 2,
+      "assigned_technician_id": "T03",
+      "assigned_bay_id": "BAY-02",
+      "scheduled_start": "2026-03-11T09:30:00",
+      "scheduled_end": "2026-03-11T11:30:00",
+      "created_at": "2026-03-09T11:00:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48241",
+      "vehicle_id": "VEH-0027",
+      "customer_id": "C-0027",
+      "required_parts": [
+        {
+          "part_id": "P-010",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "engine"
+      ],
+      "estimated_duration_minutes": 150,
+      "status": "waiting",
+      "promised_at": "2026-03-10T16:30:00",
+      "priority": 2,
+      "assigned_technician_id": "T05",
+      "assigned_bay_id": "BAY-01",
+      "scheduled_start": "2026-03-10T13:15:00",
+      "scheduled_end": "2026-03-10T15:45:00",
+      "created_at": "2026-03-09T04:25:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48242",
+      "vehicle_id": "VEH-0028",
+      "customer_id": "C-0028",
+      "required_parts": [
+        {
+          "part_id": "P-014",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "ac_hvac"
+      ],
+      "estimated_duration_minutes": 120,
+      "status": "waiting",
+      "promised_at": "2026-03-10T19:30:00",
+      "priority": 3,
+      "assigned_technician_id": "T06",
+      "assigned_bay_id": "BAY-06",
+      "scheduled_start": "2026-03-10T15:30:00",
+      "scheduled_end": "2026-03-10T17:30:00",
+      "created_at": "2026-03-09T13:10:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48243",
+      "vehicle_id": "VEH-0029",
+      "customer_id": "C-0029",
+      "required_parts": [
+        {
+          "part_id": "P-023",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "tires_alignment"
+      ],
+      "estimated_duration_minutes": 45,
+      "status": "waiting",
+      "promised_at": "2026-03-10T11:45:00",
+      "priority": 1,
+      "assigned_technician_id": "T04",
+      "assigned_bay_id": "BAY-07",
+      "scheduled_start": "2026-03-10T10:30:00",
+      "scheduled_end": "2026-03-10T11:15:00",
+      "created_at": "2026-03-09T06:10:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48245",
+      "vehicle_id": "VEH-0030",
+      "customer_id": "C-0030",
+      "required_parts": [
+        {
+          "part_id": "P-019",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-020",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "transmission"
+      ],
+      "estimated_duration_minutes": 90,
+      "status": "waiting",
+      "promised_at": "2026-03-10T18:00:00",
+      "priority": 3,
+      "assigned_technician_id": "T08",
+      "assigned_bay_id": "BAY-01",
+      "scheduled_start": "2026-03-10T15:45:00",
+      "scheduled_end": "2026-03-10T17:15:00",
+      "created_at": "2026-03-09T17:40:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48246",
+      "vehicle_id": "VEH-0031",
+      "customer_id": "C-0031",
+      "required_parts": [
+        {
+          "part_id": "P-019",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-020",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "transmission"
+      ],
+      "estimated_duration_minutes": 90,
+      "status": "waiting",
+      "promised_at": "2026-03-10T14:30:00",
+      "priority": 4,
+      "assigned_technician_id": "T05",
+      "assigned_bay_id": "BAY-01",
+      "scheduled_start": "2026-03-10T11:00:00",
+      "scheduled_end": "2026-03-10T12:30:00",
+      "created_at": "2026-03-09T22:40:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48247",
+      "vehicle_id": "VEH-0032",
+      "customer_id": "C-0032",
+      "required_parts": [
+        {
+          "part_id": "P-023",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "tires_alignment"
+      ],
+      "estimated_duration_minutes": 30,
+      "status": "completed",
+      "promised_at": "2026-03-10T11:30:00",
+      "priority": 3,
+      "assigned_technician_id": "T01",
+      "assigned_bay_id": "BAY-01",
+      "scheduled_start": "2026-03-10T09:00:00",
+      "scheduled_end": "2026-03-10T09:30:00",
+      "created_at": "2026-03-09T15:15:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48248",
+      "vehicle_id": "VEH-0033",
+      "customer_id": "C-0033",
+      "required_parts": [
+        {
+          "part_id": "P-019",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-020",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "transmission"
+      ],
+      "estimated_duration_minutes": 90,
+      "status": "waiting",
+      "promised_at": "2026-03-10T13:30:00",
+      "priority": 4,
+      "assigned_technician_id": "T08",
+      "assigned_bay_id": "BAY-03",
+      "scheduled_start": "2026-03-10T11:30:00",
+      "scheduled_end": "2026-03-10T13:00:00",
+      "created_at": "2026-03-10T08:25:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48253",
+      "vehicle_id": "VEH-0034",
+      "customer_id": "C-0034",
+      "required_parts": [
+        {
+          "part_id": "P-005",
+          "quantity": 1
+        },
+        {
+          "part_id": "P-006",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "general_service"
+      ],
+      "estimated_duration_minutes": 45,
+      "status": "in_progress",
+      "promised_at": "2026-03-10T11:00:00",
+      "priority": 3,
+      "assigned_technician_id": "T06",
+      "assigned_bay_id": "BAY-07",
+      "scheduled_start": "2026-03-10T09:15:00",
+      "scheduled_end": "2026-03-10T10:00:00",
+      "created_at": "2026-03-09T18:00:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48256",
+      "vehicle_id": "VEH-0035",
+      "customer_id": "C-0035",
+      "required_parts": [
+        {
+          "part_id": "P-004",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "brakes"
+      ],
+      "estimated_duration_minutes": 90,
+      "status": "waiting",
+      "promised_at": "2026-03-10T14:30:00",
+      "priority": 2,
+      "assigned_technician_id": "T07",
+      "assigned_bay_id": "BAY-04",
+      "scheduled_start": "2026-03-10T12:00:00",
+      "scheduled_end": "2026-03-10T13:30:00",
+      "created_at": "2026-03-09T12:10:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48257",
+      "vehicle_id": "VEH-0036",
+      "customer_id": "C-0036",
+      "required_parts": [
+        {
+          "part_id": "P-016",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T14:00:00",
+      "priority": 4,
+      "assigned_technician_id": "T09",
+      "assigned_bay_id": "BAY-06",
+      "scheduled_start": "2026-03-10T11:30:00",
+      "scheduled_end": "2026-03-10T12:30:00",
+      "created_at": "2026-03-09T16:10:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48258",
+      "vehicle_id": "VEH-0037",
+      "customer_id": "C-0037",
+      "required_parts": [
+        {
+          "part_id": "P-023",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "tires_alignment"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T15:30:00",
+      "priority": 1,
+      "assigned_technician_id": "T01",
+      "assigned_bay_id": "BAY-04",
+      "scheduled_start": "2026-03-10T13:30:00",
+      "scheduled_end": "2026-03-10T14:30:00",
+      "created_at": "2026-03-09T06:10:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48259",
+      "vehicle_id": "VEH-0038",
+      "customer_id": "C-0038",
+      "required_parts": [
+        {
+          "part_id": "P-016",
+          "quantity": 1
+        }
+      ],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 30,
+      "status": "waiting",
+      "promised_at": "2026-03-10T13:15:00",
+      "priority": 1,
+      "assigned_technician_id": "T12",
+      "assigned_bay_id": "BAY-05",
+      "scheduled_start": "2026-03-10T12:00:00",
+      "scheduled_end": "2026-03-10T12:30:00",
+      "created_at": "2026-03-09T20:25:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48260",
+      "vehicle_id": "VEH-0039",
+      "customer_id": "C-0039",
+      "required_parts": [],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 45,
+      "status": "waiting",
+      "promised_at": "2026-03-10T14:15:00",
+      "priority": 1,
+      "assigned_technician_id": "T05",
+      "assigned_bay_id": "BAY-05",
+      "scheduled_start": "2026-03-10T12:30:00",
+      "scheduled_end": "2026-03-10T13:15:00",
+      "created_at": "2026-03-09T17:55:00",
+      "is_waiting_customer": true,
+      "is_synthetic": true
+    },
+    {
+      "ro_id": "48261",
+      "vehicle_id": "VEH-0040",
+      "customer_id": "C-0040",
+      "required_parts": [],
+      "required_skills": [
+        "diagnostics"
+      ],
+      "estimated_duration_minutes": 60,
+      "status": "waiting",
+      "promised_at": "2026-03-10T17:30:00",
+      "priority": 3,
+      "assigned_technician_id": "T12",
+      "assigned_bay_id": "BAY-03",
+      "scheduled_start": "2026-03-10T15:30:00",
+      "scheduled_end": "2026-03-10T16:30:00",
+      "created_at": "2026-03-09T15:40:00",
+      "is_waiting_customer": false,
+      "is_synthetic": true
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "APT-001",
+      "ro_id": "48236",
+      "scheduled_at": "2026-03-10T07:30:00",
+      "promised_at": "2026-03-10T09:30:00",
+      "customer_preference": "Needs shuttle ride",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-002",
+      "ro_id": "48205",
+      "scheduled_at": "2026-03-10T08:00:00",
+      "promised_at": "2026-03-10T10:30:00",
+      "customer_preference": "Prefers morning drop-off",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-003",
+      "ro_id": "48229",
+      "scheduled_at": "2026-03-10T08:00:00",
+      "promised_at": "2026-03-10T10:45:00",
+      "customer_preference": "Prefers pickup after 17:00",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-004",
+      "ro_id": "48238",
+      "scheduled_at": "2026-03-10T08:45:00",
+      "promised_at": "2026-03-10T11:30:00",
+      "customer_preference": "Waiting on site",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-005",
+      "ro_id": "48247",
+      "scheduled_at": "2026-03-10T09:00:00",
+      "promised_at": "2026-03-10T11:30:00",
+      "customer_preference": "Prefers pickup after 17:00",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-006",
+      "ro_id": "48204",
+      "scheduled_at": "2026-03-10T09:15:00",
+      "promised_at": "2026-03-10T11:00:00",
+      "customer_preference": "Prefers morning drop-off",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-007",
+      "ro_id": "48253",
+      "scheduled_at": "2026-03-10T09:15:00",
+      "promised_at": "2026-03-10T11:00:00",
+      "customer_preference": "Waiting on site",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-008",
+      "ro_id": "48203",
+      "scheduled_at": "2026-03-10T09:30:00",
+      "promised_at": "2026-03-10T13:00:00",
+      "customer_preference": "Prefers pickup after 17:00",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-009",
+      "ro_id": "48224",
+      "scheduled_at": "2026-03-10T09:45:00",
+      "promised_at": "2026-03-10T11:00:00",
+      "customer_preference": "Waiting on site",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-010",
+      "ro_id": "48202",
+      "scheduled_at": "2026-03-10T10:30:00",
+      "promised_at": "2026-03-10T12:15:00",
+      "customer_preference": "Waiting on site",
+      "consent_status": "approved",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-011",
+      "ro_id": "48243",
+      "scheduled_at": "2026-03-10T10:30:00",
+      "promised_at": "2026-03-10T11:45:00",
+      "customer_preference": null,
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-012",
+      "ro_id": "48230",
+      "scheduled_at": "2026-03-10T10:45:00",
+      "promised_at": "2026-03-10T12:00:00",
+      "customer_preference": "Waiting on site",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-013",
+      "ro_id": "48213",
+      "scheduled_at": "2026-03-10T11:00:00",
+      "promised_at": "2026-03-10T17:00:00",
+      "customer_preference": "Waiting on site",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-014",
+      "ro_id": "48246",
+      "scheduled_at": "2026-03-10T11:00:00",
+      "promised_at": "2026-03-10T14:30:00",
+      "customer_preference": null,
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-015",
+      "ro_id": "48225",
+      "scheduled_at": "2026-03-10T11:30:00",
+      "promised_at": "2026-03-10T12:30:00",
+      "customer_preference": "Needs shuttle ride",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-016",
+      "ro_id": "48212",
+      "scheduled_at": "2026-03-10T12:30:00",
+      "promised_at": "2026-03-10T15:00:00",
+      "customer_preference": "Prefers morning drop-off",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-017",
+      "ro_id": "48260",
+      "scheduled_at": "2026-03-10T12:30:00",
+      "promised_at": "2026-03-10T14:15:00",
+      "customer_preference": null,
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-018",
+      "ro_id": "48214",
+      "scheduled_at": "2026-03-10T12:45:00",
+      "promised_at": "2026-03-10T14:00:00",
+      "customer_preference": "Prefers morning drop-off",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-019",
+      "ro_id": "48211",
+      "scheduled_at": "2026-03-10T13:00:00",
+      "promised_at": "2026-03-10T14:45:00",
+      "customer_preference": null,
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-020",
+      "ro_id": "48220",
+      "scheduled_at": "2026-03-10T13:00:00",
+      "promised_at": "2026-03-10T15:00:00",
+      "customer_preference": null,
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-021",
+      "ro_id": "48201",
+      "scheduled_at": "2026-03-10T13:15:00",
+      "promised_at": "2026-03-10T14:45:00",
+      "customer_preference": null,
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-022",
+      "ro_id": "48241",
+      "scheduled_at": "2026-03-10T13:15:00",
+      "promised_at": "2026-03-10T16:30:00",
+      "customer_preference": "Waiting on site",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-023",
+      "ro_id": "48215",
+      "scheduled_at": "2026-03-10T14:15:00",
+      "promised_at": "2026-03-10T16:30:00",
+      "customer_preference": "Declined a later pickup time",
+      "consent_status": "declined",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-024",
+      "ro_id": "48227",
+      "scheduled_at": "2026-03-10T14:30:00",
+      "promised_at": "2026-03-10T16:00:00",
+      "customer_preference": null,
+      "consent_status": "approved",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-025",
+      "ro_id": "48231",
+      "scheduled_at": "2026-03-10T14:30:00",
+      "promised_at": "2026-03-10T16:00:00",
+      "customer_preference": null,
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-026",
+      "ro_id": "48242",
+      "scheduled_at": "2026-03-10T15:30:00",
+      "promised_at": "2026-03-10T19:30:00",
+      "customer_preference": "Needs shuttle ride",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-027",
+      "ro_id": "48245",
+      "scheduled_at": "2026-03-10T15:45:00",
+      "promised_at": "2026-03-10T18:00:00",
+      "customer_preference": "Prefers morning drop-off",
+      "consent_status": "pending",
+      "is_synthetic": true
+    },
+    {
+      "appointment_id": "APT-028",
+      "ro_id": "48240",
+      "scheduled_at": "2026-03-11T09:30:00",
+      "promised_at": "2026-03-11T12:00:00",
+      "customer_preference": "OEM parts only",
+      "consent_status": "pending",
+      "is_synthetic": true
+    }
+  ],
+  "disruptions": [
+    {
+      "disruption_id": "D-001",
+      "disruption_type": "part_backorder",
+      "affected_resource_type": "part",
+      "affected_resource_id": "P-001",
+      "start_time": "2026-03-10T09:40:00",
+      "severity": "high",
+      "expected_duration_minutes": 1460,
+      "status": "scheduled",
+      "related_part_id": "P-001",
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": "LOC-A",
+      "description": "OEM coolant pump backordered; new ETA tomorrow 10:00.",
+      "details": {
+        "previous_expected_arrival": "2026-03-10T10:30:00",
+        "new_expected_arrival": "2026-03-11T10:00:00",
+        "hero_step": "detect"
+      },
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-002",
+      "disruption_type": "incorrect_inventory_count",
+      "affected_resource_type": "inventory",
+      "affected_resource_id": "P-001@LOC-B",
+      "start_time": "2026-03-10T10:38:00",
+      "severity": "high",
+      "expected_duration_minutes": null,
+      "status": "scheduled",
+      "related_part_id": "P-001",
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": "LOC-B",
+      "description": "Store B inventory counter shows 0 on hand; system believed 1.",
+      "details": {
+        "system_quantity": 1,
+        "actual_quantity": 0,
+        "hero_step": "checkpoint_failure"
+      },
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-003",
+      "disruption_type": "technician_absence",
+      "affected_resource_type": "technician",
+      "affected_resource_id": "T11",
+      "start_time": "2026-03-10T07:30:00",
+      "severity": "medium",
+      "expected_duration_minutes": 600,
+      "status": "active",
+      "related_part_id": null,
+      "related_technician_id": "T11",
+      "related_bay_id": null,
+      "related_location_id": null,
+      "description": "Technician T11 absent today (sick leave).",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-004",
+      "disruption_type": "part_backorder",
+      "affected_resource_type": "part",
+      "affected_resource_id": "P-021",
+      "start_time": "2026-03-10T08:15:00",
+      "severity": "low",
+      "expected_duration_minutes": 4320,
+      "status": "active",
+      "related_part_id": "P-021",
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": "LOC-A",
+      "description": "Thermostat housing backordered; no open repair order needs it.",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-005",
+      "disruption_type": "repair_duration_overrun",
+      "affected_resource_type": "repair_order",
+      "affected_resource_id": "48203",
+      "start_time": "2026-03-10T09:05:00",
+      "severity": "medium",
+      "expected_duration_minutes": 45,
+      "status": "active",
+      "related_part_id": null,
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": null,
+      "description": "In-progress job running longer than estimated.",
+      "details": {
+        "ro_id": "48203",
+        "overrun_minutes": 45
+      },
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-006",
+      "disruption_type": "bay_unavailable",
+      "affected_resource_type": "bay",
+      "affected_resource_id": "BAY-07",
+      "start_time": "2026-03-09T13:00:00",
+      "severity": "low",
+      "expected_duration_minutes": 120,
+      "status": "resolved",
+      "related_part_id": null,
+      "related_technician_id": null,
+      "related_bay_id": "BAY-07",
+      "related_location_id": null,
+      "description": "Lift inspection yesterday afternoon (completed).",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-007",
+      "disruption_type": "technician_absence",
+      "affected_resource_type": "technician",
+      "affected_resource_id": "T09",
+      "start_time": "2026-03-09T08:00:00",
+      "severity": "medium",
+      "expected_duration_minutes": 540,
+      "status": "resolved",
+      "related_part_id": null,
+      "related_technician_id": "T09",
+      "related_bay_id": null,
+      "related_location_id": null,
+      "description": "Technician T09 absent yesterday.",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-008",
+      "disruption_type": "incorrect_inventory_count",
+      "affected_resource_type": "inventory",
+      "affected_resource_id": "P-015@LOC-A",
+      "start_time": "2026-03-09T15:20:00",
+      "severity": "low",
+      "expected_duration_minutes": null,
+      "status": "resolved",
+      "related_part_id": "P-015",
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": "LOC-A",
+      "description": "Refrigerant count corrected after cycle count.",
+      "details": {
+        "system_quantity": 3,
+        "actual_quantity": 2
+      },
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-009",
+      "disruption_type": "part_backorder",
+      "affected_resource_type": "part",
+      "affected_resource_id": "P-012",
+      "start_time": "2026-03-08T10:00:00",
+      "severity": "medium",
+      "expected_duration_minutes": 1560,
+      "status": "resolved",
+      "related_part_id": "P-012",
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": "LOC-A",
+      "description": "Alternator backorder cleared; stock received.",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-010",
+      "disruption_type": "technician_absence",
+      "affected_resource_type": "technician",
+      "affected_resource_id": "T06",
+      "start_time": "2026-03-11T08:00:00",
+      "severity": "low",
+      "expected_duration_minutes": 540,
+      "status": "scheduled",
+      "related_part_id": null,
+      "related_technician_id": "T06",
+      "related_bay_id": null,
+      "related_location_id": null,
+      "description": "Technician T06 approved leave tomorrow.",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-011",
+      "disruption_type": "bay_unavailable",
+      "affected_resource_type": "bay",
+      "affected_resource_id": "BAY-05",
+      "start_time": "2026-03-10T15:00:00",
+      "severity": "low",
+      "expected_duration_minutes": 90,
+      "status": "scheduled",
+      "related_part_id": null,
+      "related_technician_id": null,
+      "related_bay_id": "BAY-05",
+      "related_location_id": null,
+      "description": "Planned maintenance on BAY-05.",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-012",
+      "disruption_type": "repair_duration_overrun",
+      "affected_resource_type": "repair_order",
+      "affected_resource_id": "48203",
+      "start_time": "2026-03-10T08:20:00",
+      "severity": "low",
+      "expected_duration_minutes": 30,
+      "status": "resolved",
+      "related_part_id": null,
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": null,
+      "description": "Earlier job overran, now finished.",
+      "details": {
+        "ro_id": "48203",
+        "overrun_minutes": 30
+      },
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-013",
+      "disruption_type": "part_backorder",
+      "affected_resource_type": "part",
+      "affected_resource_id": "P-014",
+      "start_time": "2026-03-10T13:00:00",
+      "severity": "medium",
+      "expected_duration_minutes": 2880,
+      "status": "scheduled",
+      "related_part_id": "P-014",
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": "LOC-A",
+      "description": "A/C compressor supplier delay expected this afternoon.",
+      "details": {},
+      "is_synthetic": true
+    },
+    {
+      "disruption_id": "D-014",
+      "disruption_type": "incorrect_inventory_count",
+      "affected_resource_type": "inventory",
+      "affected_resource_id": "P-005@LOC-A",
+      "start_time": "2026-03-10T11:30:00",
+      "severity": "low",
+      "expected_duration_minutes": null,
+      "status": "scheduled",
+      "related_part_id": "P-005",
+      "related_technician_id": null,
+      "related_bay_id": null,
+      "related_location_id": "LOC-A",
+      "description": "Cycle count may reveal an oil filter discrepancy.",
+      "details": {
+        "system_quantity": 4,
+        "actual_quantity": 3
+      },
+      "is_synthetic": true
+    }
+  ]
+}

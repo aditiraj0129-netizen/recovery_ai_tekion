@@ -1,0 +1,29 @@
+appointment_id,ro_id,scheduled_at,promised_at,customer_preference,consent_status,is_synthetic
+APT-001,48236,2026-03-10T07:30:00,2026-03-10T09:30:00,Needs shuttle ride,pending,True
+APT-002,48205,2026-03-10T08:00:00,2026-03-10T10:30:00,Prefers morning drop-off,pending,True
+APT-003,48229,2026-03-10T08:00:00,2026-03-10T10:45:00,Prefers pickup after 17:00,pending,True
+APT-004,48238,2026-03-10T08:45:00,2026-03-10T11:30:00,Waiting on site,pending,True
+APT-005,48247,2026-03-10T09:00:00,2026-03-10T11:30:00,Prefers pickup after 17:00,pending,True
+APT-006,48204,2026-03-10T09:15:00,2026-03-10T11:00:00,Prefers morning drop-off,pending,True
+APT-007,48253,2026-03-10T09:15:00,2026-03-10T11:00:00,Waiting on site,pending,True
+APT-008,48203,2026-03-10T09:30:00,2026-03-10T13:00:00,Prefers pickup after 17:00,pending,True
+APT-009,48224,2026-03-10T09:45:00,2026-03-10T11:00:00,Waiting on site,pending,True
+APT-010,48202,2026-03-10T10:30:00,2026-03-10T12:15:00,Waiting on site,approved,True
+APT-011,48243,2026-03-10T10:30:00,2026-03-10T11:45:00,,pending,True
+APT-012,48230,2026-03-10T10:45:00,2026-03-10T12:00:00,Waiting on site,pending,True
+APT-013,48213,2026-03-10T11:00:00,2026-03-10T17:00:00,Waiting on site,pending,True
+APT-014,48246,2026-03-10T11:00:00,2026-03-10T14:30:00,,pending,True
+APT-015,48225,2026-03-10T11:30:00,2026-03-10T12:30:00,Needs shuttle ride,pending,True
+APT-016,48212,2026-03-10T12:30:00,2026-03-10T15:00:00,Prefers morning drop-off,pending,True
+APT-017,48260,2026-03-10T12:30:00,2026-03-10T14:15:00,,pending,True
+APT-018,48214,2026-03-10T12:45:00,2026-03-10T14:00:00,Prefers morning drop-off,pending,True
+APT-019,48211,2026-03-10T13:00:00,2026-03-10T14:45:00,,pending,True
+APT-020,48220,2026-03-10T13:00:00,2026-03-10T15:00:00,,pending,True
+APT-021,48201,2026-03-10T13:15:00,2026-03-10T14:45:00,,pending,True
+APT-022,48241,2026-03-10T13:15:00,2026-03-10T16:30:00,Waiting on site,pending,True
+APT-023,48215,2026-03-10T14:15:00,2026-03-10T16:30:00,Declined a later pickup time,declined,True
+APT-024,48227,2026-03-10T14:30:00,2026-03-10T16:00:00,,approved,True
+APT-025,48231,2026-03-10T14:30:00,2026-03-10T16:00:00,,pending,True
+APT-026,48242,2026-03-10T15:30:00,2026-03-10T19:30:00,Needs shuttle ride,pending,True
+APT-027,48245,2026-03-10T15:45:00,2026-03-10T18:00:00,Prefers morning drop-off,pending,True
+APT-028,48240,2026-03-11T09:30:00,2026-03-11T12:00:00,OEM parts only,pending,True

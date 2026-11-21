@@ -1,0 +1,15 @@
+disruption_id,disruption_type,affected_resource_type,affected_resource_id,start_time,severity,expected_duration_minutes,status,related_part_id,related_technician_id,related_bay_id,related_location_id,description,details,is_synthetic
+D-001,part_backorder,part,P-001,2026-03-10T09:40:00,high,1460,scheduled,P-001,,,LOC-A,OEM coolant pump backordered; new ETA tomorrow 10:00.,"{""hero_step"": ""detect"", ""new_expected_arrival"": ""2026-03-11T10:00:00"", ""previous_expected_arrival"": ""2026-03-10T10:30:00""}",True
+D-002,incorrect_inventory_count,inventory,P-001@LOC-B,2026-03-10T10:38:00,high,,scheduled,P-001,,,LOC-B,Store B inventory counter shows 0 on hand; system believed 1.,"{""actual_quantity"": 0, ""hero_step"": ""checkpoint_failure"", ""system_quantity"": 1}",True
+D-003,technician_absence,technician,T11,2026-03-10T07:30:00,medium,600,active,,T11,,,Technician T11 absent today (sick leave).,{},True
+D-004,part_backorder,part,P-021,2026-03-10T08:15:00,low,4320,active,P-021,,,LOC-A,Thermostat housing backordered; no open repair order needs it.,{},True
+D-005,repair_duration_overrun,repair_order,48203,2026-03-10T09:05:00,medium,45,active,,,,,In-progress job running longer than estimated.,"{""overrun_minutes"": 45, ""ro_id"": ""48203""}",True
+D-006,bay_unavailable,bay,BAY-07,2026-03-09T13:00:00,low,120,resolved,,,BAY-07,,Lift inspection yesterday afternoon (completed).,{},True
+D-007,technician_absence,technician,T09,2026-03-09T08:00:00,medium,540,resolved,,T09,,,Technician T09 absent yesterday.,{},True
+D-008,incorrect_inventory_count,inventory,P-015@LOC-A,2026-03-09T15:20:00,low,,resolved,P-015,,,LOC-A,Refrigerant count corrected after cycle count.,"{""actual_quantity"": 2, ""system_quantity"": 3}",True
+D-009,part_backorder,part,P-012,2026-03-08T10:00:00,medium,1560,resolved,P-012,,,LOC-A,Alternator backorder cleared; stock received.,{},True
+D-010,technician_absence,technician,T06,2026-03-11T08:00:00,low,540,scheduled,,T06,,,Technician T06 approved leave tomorrow.,{},True
+D-011,bay_unavailable,bay,BAY-05,2026-03-10T15:00:00,low,90,scheduled,,,BAY-05,,Planned maintenance on BAY-05.,{},True
+D-012,repair_duration_overrun,repair_order,48203,2026-03-10T08:20:00,low,30,resolved,,,,,"Earlier job overran, now finished.","{""overrun_minutes"": 30, ""ro_id"": ""48203""}",True
+D-013,part_backorder,part,P-014,2026-03-10T13:00:00,medium,2880,scheduled,P-014,,,LOC-A,A/C compressor supplier delay expected this afternoon.,{},True
+D-014,incorrect_inventory_count,inventory,P-005@LOC-A,2026-03-10T11:30:00,low,,scheduled,P-005,,,LOC-A,Cycle count may reveal an oil filter discrepancy.,"{""actual_quantity"": 3, ""system_quantity"": 4}",True
