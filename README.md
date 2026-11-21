@@ -8,13 +8,15 @@ All data in this project is **synthetic and illustrative**. Recovery AI is a pro
 
 ## Implemented so far
 - Repository structure
-- FastAPI backend scaffold with `GET /api/health`
-- SQLAlchemy database models (17 tables)
+- FastAPI backend with SQLAlchemy models (17 tables) and Pydantic response models
 - Reproducible synthetic dataset generator (seeded) with the fixed hero scenario
-- Dataset integrity tests
+- Loader that seeds SQLite from the generated dataset (automatic on first start)
+- Read-only API endpoints (see below)
+- Dataset integrity, seeding and API tests
 
 ## Not implemented yet
-Loading the dataset into SQLite, read endpoints, dashboard, disruption detection, optimization, simulation, LLM parsing, safe undo.
+Dashboard UI, disruption detection, impact analysis, optimization, simulation, LLM parsing, safe undo.
+The hero disruptions (D-001, D-002) exist in the data as dormant `scheduled` records; nothing fires them yet.
 
 ## Generate the synthetic dataset
 From the repository root (any Python 3.12 environment works; the generator uses only the standard library):
@@ -31,11 +33,28 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp ../.env.example .env
-python -m uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload --port 8001
 ```
-Then open http://127.0.0.1:8000/api/health and http://127.0.0.1:8000/docs.
+On first start the API creates `backend/recovery_ai.db` and loads the dataset into it.
+To reset the database to the generated dataset at any time: `python -m app.seed`.
+Then open http://127.0.0.1:8001/docs (interactive API documentation).
+
+## API endpoints (all read-only, all `GET`)
+| Endpoint | Purpose | Filters |
+|---|---|---|
+| `/api/health` | Service and database check | |
+| `/api/dashboard` | Counts by status for the dashboard | |
+| `/api/repair-orders`, `/api/repair-orders/{ro_id}` | Repair orders with parts and skills | `status`, `assigned_technician_id` |
+| `/api/technicians`, `/api/technicians/{id}` | Technicians, skills, shifts | `availability` |
+| `/api/bays`, `/api/bays/{id}` | Service bays | `status` |
+| `/api/inventory` | Stock per part per location | `part_id`, `location_id` |
+| `/api/appointments`, `/api/appointments/{id}` | Appointments and consent status | `consent_status`, `ro_id` |
+| `/api/disruptions`, `/api/disruptions/{id}` | Seeded disruptions | `status` |
+
+Unknown IDs return `404`; invalid filter values return `422`.
 
 ## Run the tests
 ```bash
 cd backend && source .venv/bin/activate && python -m pytest -v
 ```
+Tests use a throwaway database, so they never touch `backend/recovery_ai.db`.

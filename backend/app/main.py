@@ -8,16 +8,29 @@ from fastapi.middleware.cors import CORSMiddleware
 from app import models  # noqa: F401  (registers tables on Base)
 from app.config import get_settings
 from app.database import Base, engine
-from app.routers import health
+from app.routers import (
+    appointments,
+    bays,
+    dashboard,
+    disruptions,
+    health,
+    inventory,
+    repair_orders,
+    technicians,
+)
+from app.seed import seed_if_empty
+
+settings = get_settings()
 
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     Base.metadata.create_all(bind=engine)
+    if settings.auto_seed:
+        seed_if_empty(engine, settings.resolved_dataset_path)
     yield
 
 
-settings = get_settings()
 app = FastAPI(
     title=settings.app_name,
     version=settings.app_version,
@@ -30,4 +43,5 @@ app.add_middleware(
     allow_methods=["GET"],
     allow_headers=["*"],
 )
-app.include_router(health.router)
+for module in (health, dashboard, repair_orders, technicians, bays, inventory, appointments, disruptions):
+    app.include_router(module.router)
