@@ -15,6 +15,17 @@ All data in this project is **synthetic and illustrative**. Recovery AI is a pro
 - Dataset integrity, seeding and API tests
 - Read-only dashboard (React, Vite, TypeScript, Tailwind) showing repair orders, technicians, bays, parts inventory, appointments and disruptions
 
+- <img width="300" height="411" alt="WhatsApp Image 2026-11-22 at 11 36 23" src="https://github.com/user-attachments/assets/e79549ce-1e01-46d2-a1ef-5bff0060a7f6" />
+- <img width="300" height="497" alt="WhatsApp Image 2026-11-22 at 11 36 23 (4)" src="https://github.com/user-attachments/assets/ef60cc00-26f2-4170-bc56-aa49001e33d4" />
+
+<img width="300" height="412" alt="WhatsApp Image 2026-11-22 at 11 36 23 (3)" src="https://github.com/user-attachments/assets/4bb99b72-0aa2-4543-a0c1-8309aec08cba" />
+<img width="300" height="400" alt="WhatsApp Image 2026-11-22 at 11 36 23 (2)" src="https://github.com/user-attachments/assets/b7b5fdee-bdc0-49d6-97e2-a7d012cc4551" />
+
+
+
+
+
+
 ## Not implemented yet
 Disruption detection, impact analysis, optimization, simulation, LLM parsing, safe undo.
 The hero disruptions (D-001, D-002) exist in the data as dormant `scheduled` records; nothing fires them yet.
